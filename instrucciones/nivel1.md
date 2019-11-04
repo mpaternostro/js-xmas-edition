@@ -132,7 +132,7 @@ Para validar nuestro formulario, vamos a tener  que hacer lo siguiente:
 Si lo probás, vas a ver que no pasa nada. La razón de eso  es el
 comportamiento por default del botón submit.
   
-  
+    
 4.Eventos. Botón submit
 =======================
 
@@ -171,7 +171,7 @@ Y ahora debería funcionar.
   1. Crear una función `manejarErrores ` que tome 1 argumento `errores`.
   2. Agregar un chequeo en esta función que diga que si no tenemos errores,
   imprima `console.log('éxito')` y si no, que haga un `console.log` de los errores.
-  3. Reemplazar el console.log de validarNombre y en vez de eso,
+  3. Reemplazar el console.log de validarNombre (o validarFormulario?) y en vez de eso,
   llamar a la función `manejarErrores` con un array de errores.
 
 
@@ -222,7 +222,7 @@ Atención: No se olviden de la `,` para separar múltiples valores.
   let cuentaErrores = 0;
   ```
   
-  6. Verificamos si hay un error en `nombr`e
+  6. Verificamos si hay un error en `nombre`
   
   ```
   if (errores.nombre) {
@@ -280,7 +280,7 @@ El método `forEach` lo podemos ver [en MDN directamente](https://developer.mozi
   TODO:
   1. Vamos a usar querySelector para agarrar al elemento que tenga
   el mismo nombre que cada llave del objeto que tenga errores.
-
+  
   ```
   document.querySelector(`[name="${key}"]`)
   ```

@@ -1,15 +1,19 @@
 function probarValidarNombre() {
     console.assert(
-        validarNombre('') === 'Este campo debe tener al menos 1 caracter',
+        validarNombre('') === 'El campo nombre debe tener al menos 1 caracter',
         'Validar nombre no pudo validar que el nombre no sea vacío',
     );
     console.assert(
         validarNombre('1111111111111111111111111111111111111111111111111111') ===
-        'Este campo debe tener menos de 50 caracteres',
+        'El campo nombre debe tener menos de 50 caracteres',
         'Validar nombre no pudo validar que el nombre sea menor a 50 caracteres',
     );
     console.assert(
-        validarNombre("pedro") === '', 'Validar nombre no pudo validar el nombre ingresado',
+        validarNombre('marcelo1') === 'El campo nombre solo puede estar compuesto por letras',
+        'Validar nombre no pudo validar que existan solo letras en el campo "nombre"',
+    );
+    console.assert(
+        validarNombre('pedro') === '', 'Validar nombre fallo al ingresar un nombre válido',
     );
 }
 
@@ -36,18 +40,22 @@ function probarValidarComportamiento() {
 
 function probarValidarDescripcionRegalo() {
     console.assert(
-        validarDescripcionRegalo('') === 'Este campo debe tener al menos 1 caracter',
+        validarDescripcionRegalo('') === 'El campo descripción debe tener al menos 1 caracter',
         'Validar descripción regalo no pudo validar que la descripción del regalo no esté vacia',
     );
     console.assert(
         validarDescripcionRegalo(
-            'dassdasdandsansdnuodsanodsaoniaosndinodasanjsjdakmadsopsadmsdamasdmopadsmopnsn') ===
-        'Este campo debe tener menos de 75 caracteres',
-        'Validar descripción regalo no pudo validar que la descripción del regalo sea menor a 75 caracteres'
+            'dassdasdandsansdnuodsanodsadsaoanladnlasasdasndadsoaasniaosndinodasanjsjdakmadsopsadmsdamasdmopadsmopnsn') ===
+        'El campo descripción debe tener menos de 100 caracteres',
+        'Validar descripción regalo no pudo validar que la descripción del regalo sea menor a 100 caracteres'
+    );
+    console.assert(
+        validarDescripcionRegalo('Quiero una manaos de uva (?)') === 'El campo descripción debe tener solo letras y/o números',
+        'Validar descripción regalo no pudo validar que la descripción del regalo solo contenga letras y/o números'
     );
     console.assert(
         validarDescripcionRegalo('Quiero una manaos de uva') === '',
-    'Validar descripción regalo no pudo validar que la descripción regalo sea correcta',
+    'Validar descripción regalo no pudo validar que la descripción del regalo sea correcta',
     );
 }
 
